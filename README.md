@@ -6,11 +6,9 @@ It is build with [Fela](https://github.com/rofrischmann/fela/) and requires a wo
 Each Component is carefully crafted and well tested in production.
 
 <img alt="npm downloads" src="https://img.shields.io/npm/dm/kilvin.svg">
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-2.93kb-brightgreen.svg">
+<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.93kb-brightgreen.svg">
 <img alt="npm version" src="https://badge.fury.io/js/kilvin.svg">
 <a href="https://gitter.im/rofrischmann/kilvin"><img alt="Gitter" src="https://img.shields.io/gitter/room/rofrischmann/fela.svg"></a>
-
-> [Try it on JSFiddle!](https://jsfiddle.net/mzrn1yvy/1/)
 
 ## Installation
 ```sh
