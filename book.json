@@ -1,0 +1,17 @@
+{
+  "gitbook": "3.1.0",
+  "title": "Kilvin",
+  "author": "Robin Frischmann <robin@rofrischmann.de>",
+  "description": "Official documentation for Kilvin",
+  "language": "en",
+  "plugins": ["edit-link", "prism", "-highlight", "github", "anker-enable", "advanced-emoji"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/rofrischmann/kilvin/tree/master",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/rofrischmann/kilvin/"
+    }
+  }
+}

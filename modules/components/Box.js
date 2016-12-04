@@ -6,10 +6,11 @@ const Box = props => ({
   margin: props.margin,
   border: props.border,
   borderWidth: props.borderWidth,
-  overflow: props.noOverflow && 'hidden',
+  overflow: props.overflow ? 'visible' : 'hidden',
+  maxWidth: '100%',
 
   // flex props
-  flexGrow: props.grow,
+  flexGrow: props.grow === true ? 1 : props.grow,
   flexShrink: props.shrink || 0,
   flexBasis: props.basis || 'auto',
   flex: props.flex === true ? 1 : props.flex,
@@ -21,8 +22,8 @@ const Box = props => ({
 
   // shorthands
   display: 'flex' + (props.inline ? '-inline' : ''),
-  flexWrap: props.wrap && ('wrap' + (props.wrap === 'reverse' ? '-reverse' : '')),
+  flexWrap: props.wrap && 'wrap' || props.wrapReverse && 'wrap-reverse' || 'nowrap',
   flexDirection: (props.row ? 'row' : 'column') + (props.reverse ? '-reverse' : '')
 })
 
-export default createComponent(Box, 'div', { onClick: false })
+export default createComponent(Box)

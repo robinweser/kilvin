@@ -14,13 +14,13 @@ const errorOnFail = err => {
 
 const babelPlugin = babel({
   babelrc: false,
-  presets: [ 'es2015-rollup', 'stage-0', 'react' ],
+  presets: [ 'es2015-rollup', 'stage-0' ],
   plugins: [ 'add-module-exports' ]
 })
 const nodeResolverPlugin = nodeResolver({
   jsnext: true,
   main: true,
-  skip: [ 'fela' ]
+  skip: [ 'react-fela' ]
 })
 
 const commonJSPlugin = commonjs({ include: 'node_modules/**' })
@@ -39,7 +39,7 @@ function bundleConfig(minify) {
   return {
     format: 'umd',
     globals: {
-      fela: 'Fela'
+      'react-fela': 'ReactFela'
     },
     moduleName: 'Kilvin',
     dest: 'dist/kilvin' + (minify ? '.min' : '') + '.js',

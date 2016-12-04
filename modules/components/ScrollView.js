@@ -4,9 +4,9 @@ const ScrollView = props => ({
   overflowY: props.horizontal ? 'hidden' : 'auto',
   overflowX: props.horizontal ? 'auto' : 'hidden',
   WebkitOverflowScrolling: 'touch',
-  height: '100%',
-  width: '100%',
-  flex: 1
+  height: props.height || '100%',
+  width: props.width || '100%',
+  flex: props.flex
 })
 
 export default createComponent(ScrollView)
