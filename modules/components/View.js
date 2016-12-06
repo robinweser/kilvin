@@ -1,7 +1,7 @@
 import { createComponent } from 'react-fela'
 
 const View = props => ({
-  display: props.hidden && 'none',
+  display: props.hidden ? 'none' : 'flex',
   zIndex: props.zIndex,
   position: 'fixed',
   top: 0,
