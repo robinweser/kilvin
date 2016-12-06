@@ -16,6 +16,7 @@ Absolute is component that is positioned `absolute`. <br>
 ### Defaults
 ```CSS
 {
+  display: flex;
   position: absolute
 }
 ```

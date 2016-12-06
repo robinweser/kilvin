@@ -8,6 +8,13 @@ Spacer simply adds (vertical) whitespace.
 | **Shortcuts** | | |
 | horizontal |  | Use horizontal whitespace  |
 
+### Defaults
+```CSS
+{
+  display: flex;
+}
+```
+
 ### Example
 ```javascript
 import { Spacer, Box } from 'kilvin'

@@ -1,6 +1,7 @@
 import { createComponent } from 'react-fela'
 
 const Absolute = props => ({
+  display: 'flex',
   position: props.fixed && 'fixed' || 'absolute',
   top: props.top,
   left: props.left,

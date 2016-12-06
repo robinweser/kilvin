@@ -9,15 +9,14 @@ Box is probably the most important component. It is used to craft detailed layou
 | border | *(border-width)*, *(border-type)*,  *(border-color)* | CSS `border` property |
 | borderWidth | *(length)* (1 - 4) | CSS `borderWidth` property |
 | **Flexbox** | | |
-| borderWidth | *(length)* (1 - 4) | CSS `borderWidth` property |
 | grow | *(number)* | CSS `flex-grow` property |
 | shrink | *(number)* | CSS `flex-shrink` property |
 | basis | *(length)* | CSS `flex-basis` property |
 | flex | *(flex-grow)* *(flex-shrink)* *(flex-basis)* | CSS `flex` property |
 | justifyContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `justify-content` property |
-| alignItems | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-items` property |
 | alignContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-content` property |
-| alignSelf | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-self` property |
+| alignItems | `flex-start`, `flex-end`, `center`, `baseline`, `stretch` | CSS `align-items` property |
+| alignSelf | `flex-start`, `flex-end`, `center`, `baseline`, `stretch` | CSS `align-self` property |
 | order | *(number)* | CSS `order` property |
 | **Shortcuts** | | |
 | overflow |  | Use `overflow: visible` |

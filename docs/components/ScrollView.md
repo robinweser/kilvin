@@ -13,6 +13,7 @@ ScrollView is a simple component adding scrollbars for overflowing content.
 ### Defaults
 ```CSS
 {
+  display: flex;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: auto;

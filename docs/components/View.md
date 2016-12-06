@@ -11,6 +11,7 @@ View wraps applications and pages into a fixed, screen-fitting wrapper.
 ### Defaults
 ```CSS
 {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
