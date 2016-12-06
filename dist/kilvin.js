@@ -6,6 +6,7 @@
 
   var Absolute = function Absolute(props) {
     return {
+      display: 'flex',
       position: props.fixed && 'fixed' || 'absolute',
       top: props.top,
       left: props.left,
@@ -106,7 +107,7 @@
 
   var View = function View(props) {
     return {
-      display: props.hidden && 'none',
+      display: props.hidden ? 'none' : 'flex',
       zIndex: props.zIndex,
       position: 'fixed',
       top: 0,
