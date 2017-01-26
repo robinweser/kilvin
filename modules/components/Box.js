@@ -21,7 +21,7 @@ const Box = props => ({
   order: props.order,
 
   // shorthands
-  display: 'flex' + (props.inline ? '-inline' : ''),
+  display: (props.inline ? 'inline-' : '') + 'flex',
   flexWrap: props.wrap && 'wrap' || props.wrapReverse && 'wrap-reverse' || 'nowrap',
   flexDirection: (props.row ? 'row' : 'column') + (props.reverse ? '-reverse' : '')
 })
