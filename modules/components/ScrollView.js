@@ -1,6 +1,14 @@
+/* @flow */
 import { createComponent } from 'react-fela'
 
-const ScrollView = props => ({
+type ScrollViewProps = {
+  horizontal?: boolean,
+  flex?: number | string,
+  height?: number | string,
+  width?: number | string
+};
+const ScrollView = (props: ScrollViewProps) => ({
+  display: 'flex',
   overflowY: props.horizontal ? 'hidden' : 'auto',
   overflowX: props.horizontal ? 'auto' : 'hidden',
   WebkitOverflowScrolling: 'touch',
