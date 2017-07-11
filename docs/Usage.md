@@ -26,7 +26,7 @@ const mountNode = document.getElementById('stylesheet')
 
 render(
   <Provider renderer={renderer} mountNode={mountNode}>
-    <View style={{ backgroundColor: 'blue' }}/>
+    <View style={{ backgroundColor: 'blue' }}>
       <Box grow>
         Hello World
       </Box>
