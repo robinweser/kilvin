@@ -25,14 +25,14 @@ Otherwise we also provide [UMD](https://github.com/umdjs/umd) builds for each pa
 
 ## Documentation
 
-* [Introduction]()
-* [Usage]()
-* [Components]()
-* [FAQ]()
+* [Introduction](https://kilvin.js.org/docs/Introduction.html)
+* [Usage](https://kilvin.js.org/docs/Usage.html)
+* [Components](https://kilvin.js.org/docs/Components.html)
+* [FAQ](https://kilvin.js.org/docs/FAQ.html)
 
 
 ## Support
-Join us on [Gitter](https://gitter.im/rofrischmann/kilvin). We highly appreciate any contribution.<br>
+Join us on [Gitter](https://gitter.im/rofrischmann/fela). We highly appreciate any contribution.<br>
 We also love to get feedback.
 
 
