@@ -4,7 +4,7 @@ import { useFela } from 'react-fela'
 
 import Box from './Box'
 
-import applyMultiplier from '../../utils/applyMultiplier'
+import applyMultiplier from '../utils/applyMultiplier'
 
 export default function Spacer({ size = 1 }) {
   const { theme } = useFela()
