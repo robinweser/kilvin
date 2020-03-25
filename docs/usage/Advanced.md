@@ -55,3 +55,26 @@ export default () => (
 ```
 
 One can also skip breakpoints by passing an empty item e.g. `[4, ,8]`
+
+## Baseline Grid
+
+Box and Spacer have some props that rely on a baseline grid that can be passed with a theme.<br>
+It is optional and defaults to `1` making sure to also work without a theme.
+
+```js
+import { ThemeProvider } from 'react-fela'
+import { Box } from 'kilvin'
+
+const theme = {
+  baselineGrid: 4,
+}
+
+export default () => (
+  <ThemeProvider theme={theme}>
+    <Box padding={4}>
+      I have a 16px padding and this is a 16px spacer!
+      <Spacer size={4} />
+    </Box>
+  </ThemeProvider>
+)
+```

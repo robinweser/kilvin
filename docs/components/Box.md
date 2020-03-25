@@ -69,6 +69,13 @@ It ships with sensible flexbox defaults:
 }
 ```
 
+### BaselineGrid
+
+Some props act as multiples of an optional `baselineGrid` that can be passed with a theme.<br>
+It defaults to `1` and thus works without a theme as well.
+
+Those are all `padding` and `margin` values.
+
 ### Example
 
 ```javascript
