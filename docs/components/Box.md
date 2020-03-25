@@ -1,35 +1,60 @@
 # Box
-Box is probably the most important component. It is used to craft detailed layouts based on flexbox. It also defines box-model properties such as padding, margin and border.
+
+Box is probably the most important component.<br>
+It is used to craft detailed layouts based on flexbox.<br>
+It also defines box-model properties such as padding, margin and border.<br>
+
+It ships with sensible flexbox defaults:
+
+```
+{
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch
+}
+```
 
 ### Props
-| Property  | Value | Description |
-| --- | --- | --- | --- |
-| padding | *(length)* | CSS `padding` property |
-| margin | *(length)* | CSS `margin` property |
-| border | *(border-width)*, *(border-type)*,  *(border-color)* | CSS `border` property |
-| borderWidth | *(length)* (1 - 4) | CSS `borderWidth` property |
-| **Flexbox** | | |
-| grow | *(number)* | CSS `flex-grow` property |
-| shrink | *(number)* | CSS `flex-shrink` property |
-| basis | *(length)* | CSS `flex-basis` property |
-| flex | *(flex-grow)* *(flex-shrink)* *(flex-basis)* | CSS `flex` property |
-| justifyContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `justify-content` property |
-| alignContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-content` property |
-| alignItems | `flex-start`, `flex-end`, `center`, `baseline`, `stretch` | CSS `align-items` property |
-| alignSelf | `flex-start`, `flex-end`, `center`, `baseline`, `stretch` | CSS `align-self` property |
-| order | *(number)* | CSS `order` property |
-| **Shortcuts** | | |
-| overflow |  | Use `overflow: visible` |
-| flex |  | Use `flex: 1` |
-| grow |  | Use `flex-grow: 1` |
-| row |  | Use `flex-direction: row` |
-| reverse |  | Reverse `flex-direction` |
-| center |  | Use `justify-content: center; align-items: center` |
-| inline |  | Use `display: inline-flex` |
-| wrap |  | Use `flex-wrap: wrap` |
-| wrapReverse | | Use `flex-wrap: wrap-reverse` |
+
+| Property       |  Value                                                              | Description                                   |
+| -------------- | ------------------------------------------------------------------- | --------------------------------------------- |
+| gap            | _(number)_                                                          | Adds space in between child components        |
+| as             | _(React Component)_                                                 | The component it renders to. (default: `div`) |
+| extend         | _(Style Object)_                                                    | Extends the Fela style object                 |
+| display        | _(number)_                                                          | CSS `display` property                        |
+| width          | _(length)_                                                          | CSS `width` property                          |
+| minWidth       | _(length)_                                                          | CSS `minWidth` property                       |
+| maxWidth       | _(length)_                                                          | CSS `maxWidth` property                       |
+| height         | _(length)_                                                          | CSS `height` property                         |
+| minHeight      | _(length)_                                                          | CSS `minHeight` property                      |
+| maxHeight      | _(length)_                                                          | CSS `maxHeight` property                      |
+| padding        | _(length)_                                                          | CSS `padding` property                        |
+| paddingTop     | _(length)_                                                          | CSS `paddingTop` property                     |
+| paddingRight   | _(length)_                                                          | CSS `paddingRight` property                   |
+| paddingBottom  | _(length)_                                                          | CSS `paddingBottom` property                  |
+| paddingLeft    | _(length)_                                                          | CSS `paddingLeft` property                    |
+| margin         | _(length)_                                                          | CSS `margin` property                         |
+| marginTop      | _(length)_                                                          | CSS `marginTop` property                      |
+| marginRight    | _(length)_                                                          | CSS `marginRight` property                    |
+| marginBottom   | _(length)_                                                          | CSS `marginBottom` property                   |
+| marginLeft     | _(length)_                                                          | CSS `marginLeft` property                     |
+| grow           | _(number)_                                                          | CSS `flex-grow` property                      |
+| shrink         | _(number)_                                                          | CSS `flex-shrink` property                    |
+| basis          | _(length)_                                                          | CSS `flex-basis` property                     |
+| flex           | _(flex-grow)_ _(flex-shrink)_ _(flex-basis)_                        | CSS `flex` property                           |
+| justifyContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `justify-content` property                |
+| alignContent   | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-content` property                  |
+| alignItems     | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-items` property                    |
+| alignSelf      | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-self` property                     |
+| order          | _(number)_                                                          | CSS `order` property                          |
 
 ### Defaults
+
 ```CSS
 {
   display: flex;
@@ -45,27 +70,23 @@ Box is probably the most important component. It is used to craft detailed layou
 ```
 
 ### Example
+
 ```javascript
-import { Box } from 'kilvin'
+import { Box } from 'kilvin'
 
 const Centered = () => (
-  <Box grow justifyContent='center'>
-    <Box grow={1}
-      alignItems='flex-start'
-      style={{ backgroundColor: 'red' }}>
+  <Box grow={1} justifyContent="center">
+    <Box grow={1} alignItems="flex-start" extends={{ backgroundColor: 'red' }}>
       Start
     </Box>
-    <Box grow={2}
-      alignItems='center'
-      style={{ backgroundColor: 'blue' }}>
+    <Box grow={2} alignItems="center" extends={{ backgroundColor: 'blue' }}>
       Start
     </Box>
-    <Box grow={1}
-      alignItems='flex-end'
-      style={{ backgroundColor: 'green' }}>
+    <Box grow={1} alignItems="flex-end" extends={{ backgroundColor: 'green' }}>
       Start
     </Box>
   </Box>
 )
 ```
+
 <img src="../res/Box.png">

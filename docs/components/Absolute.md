@@ -1,19 +1,10 @@
 # Absolute
-Absolute is component that is positioned `absolute`. <br>
 
-### Props
-| Property  | Value | Description |
-| --- | --- | --- | --- |
-| top | *(length)* | CSS `top` property |
-| right | *(length)* | CSS `right` property |
-| bottom | *(length)* | CSS `bottom` property |
-| left | *(length)* | CSS `left` property |
-| width | *(length)* | CSS `width` property |
-| height | *(length)* | CSS `height` property |
-| **Shortcuts** | | |
-| fixed |  | Use `position: fixed` |
+Absolute is component that is positioned `absolute`.<br>
+It renders a `<Box>` component with the following additional CSS defaults:
 
 ### Defaults
+
 ```CSS
 {
   display: flex;
@@ -21,12 +12,27 @@ Absolute is component that is positioned `absolute`. <br>
 }
 ```
 
+### Props
+
+| Property      |  Value     | Description           |
+| ------------- | ---------- | --------------------- |
+| top           | _(length)_ | CSS `top` property    |
+| right         | _(length)_ | CSS `right` property  |
+| bottom        | _(length)_ | CSS `bottom` property |
+| left          | _(length)_ | CSS `left` property   |
+| width         | _(length)_ | CSS `width` property  |
+| height        | _(length)_ | CSS `height` property |
+| **Shortcuts** |            |                       |
+| fixed         |            | Use `position: fixed` |
+
 ### Example
+
 ```javascript
-import { Absolute } from 'kilvin'
+import { Absolute } from 'kilvin'
 
 const FixedTopLeft = (
-  <Absolute fixed
+  <Absolute
+    fixed
     height={100}
     width={100}
     left={0}
