@@ -13,7 +13,7 @@ const Box = forwardRef(
       as: As,
       extend,
       style: inlineStyle,
-      gap,
+      space,
       className,
       padding,
       paddingLeft,
@@ -90,11 +90,11 @@ const Box = forwardRef(
           },
           extend
         )}>
-        {gap
+        {space
           ? Children.toArray(children).map((child, index, arr) => (
               <React.Fragment key={index}>
                 {child}
-                {index === arr.length - 1 ? null : <Spacer size={gap} />}
+                {index === arr.length - 1 ? null : <Spacer size={space} />}
               </React.Fragment>
             ))
           : children}
@@ -150,7 +150,7 @@ Box.propTypes = {
   /** Adds inline styles. */
   style: PropTypes.object,
   /** Adds spacing between children based on the baselineGrid. */
-  gap: responsiveNumberProp,
+  space: responsiveNumberProp,
   /** Adds left padding based on the baselineGrid. */
   paddingLeft: responsiveProp,
   /** Adds right padding based on the baselineGrid. */

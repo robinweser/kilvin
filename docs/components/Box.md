@@ -23,7 +23,7 @@ It ships with sensible flexbox defaults:
 
 | Property       |  Value                                                              | Description                                   |
 | -------------- | ------------------------------------------------------------------- | --------------------------------------------- |
-| gap            | _(number)_                                                          | Adds space in between child components        |
+| space          | _(number)_                                                          | Adds space in between child components        |
 | as             | _(React Component)_                                                 | The component it renders to. (default: `div`) |
 | extend         | _(Style Object)_                                                    | Extends the Fela style object                 |
 | display        | _(number)_                                                          | CSS `display` property                        |
