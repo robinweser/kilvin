@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Box from '../box'
+import Box from '../Box'
 
 export default function ScrollView({ extend, children, ...props }) {
   return (

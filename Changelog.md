@@ -2,6 +2,10 @@
 
 ## 2.0
 
+### 2.0.5
+
+- fixed wrong import paths
+
 ### 2.0.4
 
 - added missing (peer)Dependencies
