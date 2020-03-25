@@ -35,7 +35,7 @@
   "scripts": {
     "clean": "rimraf lib es coverage",
     "docs": "gitbook install && gitbook build && gh-pages -d _book",
-    "build:package": "yarn build:es && yarn build:lib",
+    "build": "yarn build:es && yarn build:lib",
     "build:es": "babel src --out-dir es --ignore \"src/__tests__\" --copy-files",
     "build:lib": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"src/__tests__\" --copy-files",
     "release": "yarn build && npm publish && yarn docs"
