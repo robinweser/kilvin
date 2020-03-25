@@ -1,33 +1,29 @@
 # ScrollView
-ScrollView is a simple component adding scrollbars for overflowing content.
 
-### Props
-| Property  | Value | Description |
-| --- | --- | --- | --- |
-| width | *(length)* | CSS `width` property |
-| height | *(length)* | CSS `height` property |
-| flex | *(flex-grow)* *(flex-shrink)* *(flex-basis)* | CSS `flex` property |
-| **Shortcuts** | | |
-| horizontal |  | Enable horizontal *(instead of vertical)* scrolling  |
+ScrollView is a simple component adding scrollbars for overflowing content.<br>
+It renders a `<Box>` component under the hood with some additional defaults.
+
+It supports all props that are supported by `<Box>` as well.
 
 ### Defaults
+
 ```CSS
 {
-  display: flex;
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100%;
-  width: 100%
+  overflow: auto;
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-height: 100%;
 }
 ```
 
 ### Example
+
 ```javascript
-import { ScrollView } from 'kilvin'
+import { ScrollView } from 'kilvin'
 
 const List = () => (
-  <ScrollView height={50} style={{ backgroundColor: 'red' }}>
+  <ScrollView height={50} extend={{ backgroundColor: 'red' }}>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
@@ -40,4 +36,5 @@ const List = () => (
   </ScrollView>
 )
 ```
+
 <img src="../res/ScrollView.png">

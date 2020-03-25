@@ -22,6 +22,7 @@ export default function ScrollView(_ref) {
     grow: 1,
     maxHeight: "100%",
     extend: _objectSpread({
+      WebkitOverflowScrolling: 'touch',
       overflow: 'auto'
     }, extend)
   }), children);

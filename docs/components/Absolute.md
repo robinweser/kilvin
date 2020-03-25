@@ -5,9 +5,10 @@ It renders a `<Box>` component with the following additional CSS defaults:
 
 ### Defaults
 
+Those defaults are added on top of the `<Box>` defaults.
+
 ```CSS
 {
-  display: flex;
   position: absolute
 }
 ```
@@ -20,10 +21,10 @@ It renders a `<Box>` component with the following additional CSS defaults:
 | right         | _(length)_ | CSS `right` property  |
 | bottom        | _(length)_ | CSS `bottom` property |
 | left          | _(length)_ | CSS `left` property   |
-| width         | _(length)_ | CSS `width` property  |
-| height        | _(length)_ | CSS `height` property |
 | **Shortcuts** |            |                       |
 | fixed         |            | Use `position: fixed` |
+
+In addition to those props, Absolute also supports all the other `<Box>` props.
 
 ### Example
 
@@ -37,7 +38,7 @@ const FixedTopLeft = (
     width={100}
     left={0}
     top={0}
-    style={{ backgroundColor: 'red' }}>
+    extend={{ backgroundColor: 'red' }}>
     I am a 100px sized box fixed in the top-left corner
   </Absolute>
 )

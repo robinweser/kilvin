@@ -9,7 +9,11 @@ export default function ScrollView({ extend, children, ...props }) {
       shrink={1}
       grow={1}
       maxHeight="100%"
-      extend={{ overflow: 'auto', ...extend }}>
+      extend={{
+        WebkitOverflowScrolling: 'touch',
+        overflow: 'auto',
+        ...extend,
+      }}>
       {children}
     </Box>
   )
