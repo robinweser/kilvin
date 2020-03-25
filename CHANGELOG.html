@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head>
-        <title>Read Me · Kilvin</title>
+        <title>4. Changelog · Kilvin</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="docs/Introduction.html" />
     
+    <link rel="prev" href="docs/components/Spacer.html" />
     
 
     </head>
@@ -91,7 +91,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -233,7 +233,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="CHANGELOG.html">
+        <li class="chapter active" data-level="1.5" data-path="CHANGELOG.html">
             
                 <a href="CHANGELOG.html">
             
@@ -276,7 +276,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Read Me</a>
+        <a href="." >4. Changelog</a>
     </h1>
 </div>
 
@@ -291,53 +291,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="kilvin">Kilvin</h1>
-<p>Kilvin is a set of universal &amp; primitive Layout Components for <a href="https://github.com/facebook/react/" _target="blank">React</a>.<br>
-It is build with <a href="https://github.com/robinweser/fela/" _target="blank">Fela</a> and requires <a href="https://github.com/robinweser/fela/tree/master/packages/react-fela" _target="blank">react-fela</a>. It is intended to be used in projects that use <a href="https://github.com/robinweser/fela/" _target="blank">Fela</a> anyways.</p>
-<p>Each component is carefully crafted and well tested in production.</p>
-<p><img alt="npm downloads" src="https://img.shields.io/npm/dm/kilvin.svg">
-<img alt="npm version" src="https://badge.fury.io/js/kilvin.svg">
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.93kb-brightgreen.svg"></p>
-<h2 id="installation">Installation</h2>
-<pre class="language-"><code class="lang-sh"><span class="token function">yarn</span> <span class="token function">add</span> kilvin
-</code></pre>
-<p>Alternatively use <code>npm i --save kilvin</code>.</p>
-<h2 id="the-gist">The Gist</h2>
-<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Absolute<span class="token punctuation">,</span> Box<span class="token punctuation">,</span> Spacer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;kilvin&apos;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>Box space<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Absolute top<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span> left<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span> fixed<span class="token operator">&gt;</span>
-      Fixed <span class="token keyword">in</span> the upper left corner<span class="token punctuation">.</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>Absolute<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box padding<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token constant">A</span><span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box padding<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">}</span> width<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">50</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-      <span class="token constant">B</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-<span class="token punctuation">)</span>
-</code></pre>
-<h2 id="documentation">Documentation</h2>
+                                <h1 id="changelog">Changelog</h1>
+<h2 id="20">2.0</h2>
+<h2 id="10">1.0</h2>
+<h3 id="101">1.0.1</h3>
 <ul>
-<li><a href="https://kilvin.js.org/docs/Introduction.html" _target="blank">Introduction</a></li>
-<li><a href="https://kilvin.js.org/docs/Usage.html" _target="blank">Usage</a><ul>
-<li><a href="https://kilvin.js.org/docs/usage/Basic.html" _target="blank">Basic</a></li>
-<li><a href="https://kilvin.js.org/docs/usage/Advanced.html" _target="blank">Advanced</a></li>
+<li>added <code>display: flex</code> to Absolute, ScrollView and View.</li>
 </ul>
-</li>
-<li><a href="https://kilvin.js.org/docs/Components.html" _target="blank">Components</a><ul>
-<li><a href="https://kilvin.js.org/docs/components/Absolute.html" _target="blank">Absolute</a></li>
-<li><a href="https://kilvin.js.org/docs/components/Box.html" _target="blank">Box</a></li>
-<li><a href="https://kilvin.js.org/docs/components/ScrollView.html" _target="blank">ScrollView</a></li>
-<li><a href="https://kilvin.js.org/docs/components/Spacer.html" _target="blank">Spacer</a></li>
-</ul>
-</li>
-<li><a href="https://kilvin.js.org/docs/Changelog.html" _target="blank">Changelog</a></li>
-</ul>
-<h2 id="license">License</h2>
-<p>Kilvin is licensed under the <a href="http://opensource.org/licenses/MIT" _target="blank">MIT License</a>.<br>
-Documentation is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" _target="blank">Creative Common License</a>.<br>
-Created with &#x2665; by <a href="http://weser.io" _target="blank">@robinweser</a> and all the great contributors.</p>
+<h3 id="100">1.0.0</h3>
+<p>First release</p>
 
                                 
                                 </section>
@@ -365,10 +327,10 @@ Created with &#x2665; by <a href="http://weser.io" _target="blank">@robinweser</
 
             
                 
-                
-                <a href="docs/Introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 1. Introduction">
-                    <i class="fa fa-angle-right"></i>
+                <a href="docs/components/Spacer.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.4. Spacer">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -377,7 +339,7 @@ Created with &#x2665; by <a href="http://weser.io" _target="blank">@robinweser</
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Read Me","level":"1.1","depth":1,"next":{"title":"1. Introduction","level":"1.2","depth":1,"path":"docs/Introduction.md","ref":"docs/Introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"README.md","mtime":"2020-03-25T10:34:33.774Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-03-25T10:37:35.698Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4. Changelog","level":"1.5","depth":1,"previous":{"title":"3.4. Spacer","level":"1.4.4","depth":2,"path":"docs/components/Spacer.md","ref":"docs/components/Spacer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"CHANGELOG.md","mtime":"2020-03-25T09:13:49.663Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-03-25T10:37:35.698Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

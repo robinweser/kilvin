@@ -8,6 +8,7 @@ pre[class*="language-"] {
 	color: white;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
 	text-align: left;
 	text-shadow: 0 -.1em .2em black;
 	white-space: pre;
@@ -84,7 +85,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	opacity: .7;
 }
 
-.namespace {
+.token.namespace {
 	opacity: .7;
 }
 
@@ -158,9 +159,6 @@ pre[data-line] {
 }
 
 .line-highlight {
-	background: -moz-linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0)); /* #545454 */
-	background: -o-linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0)); /* #545454 */
-	background: -webkit-linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0)); /* #545454 */
 	background: hsla(0, 0%, 33%, 0.25); /* #545454 */
 	background: linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0)); /* #545454 */
 	border-bottom: 1px dashed hsl(0, 0%, 33%); /* #545454 */

@@ -8,7 +8,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.1.0">
-        <meta name="author" content="Robin Frischmann <robin@rofrischmann.de>">
+        <meta name="author" content="Robin Weser <contact@weser.io>">
         
         
     
@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Components.html" />
+    <link rel="next" href="usage/Basic.html" />
     
     
     <link rel="prev" href="Introduction.html" />
@@ -129,6 +129,38 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage/Basic.html">
+            
+                <a href="usage/Basic.html">
+            
+                    
+                    2. Basic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="usage/Advanced.html">
+            
+                <a href="usage/Advanced.html">
+            
+                    
+                    2. Advanced
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -198,43 +230,17 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="components/Text.html">
-            
-                <a href="components/Text.html">
-            
-                    
-                    3.5. Text
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" data-path="components/View.html">
-            
-                <a href="components/View.html">
-            
-                    
-                    3.6. View
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="FAQ.html">
+        <li class="chapter " data-level="1.5" data-path="../CHANGELOG.html">
             
-                <a href="FAQ.html">
+                <a href="../CHANGELOG.html">
             
                     
-                    4. FAQ
+                    4. Changelog
             
                 </a>
             
@@ -288,39 +294,10 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="usage">Usage</h1>
-<h2 id="setup">Setup</h2>
-<p>If you did not use <a href="https://github.com/rofrischmann/fela/" _target="blank">Fela</a> yet, I highly recommend reading through the whole <a href="http://fela.js.org" _target="blank">documentation</a>.<br>
-You should read the <a href="http://fela.js.org/docs/guides/UsageWithReact.html" _target="blank">Usage with React</a> guide and wrap your whole application with the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span><span class="token punctuation">&gt;</span></span></code> component provided by <a href="https://github.com/rofrischmann/fela/tree/master/packages/react-fela" _target="blank">react-fela</a>.
-<br>
-After setting up react-fela, you can simply import any Kilvin component and use it as is. They&apos;ve all been created using the <code>createComponent</code> API.</p>
-<h4 id="example">Example</h4>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-fela&apos;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> createRenderer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;fela&apos;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> View<span class="token punctuation">,</span> Box <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;kilvin&apos;</span>
-
-<span class="token keyword">import</span> presetWeb <span class="token keyword">from</span> <span class="token string">&apos;fela-preset-web&apos;</span>
-
-<span class="token keyword">const</span> renderer <span class="token operator">=</span> <span class="token function">createRenderer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>presetWeb
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token keyword">const</span> mountNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;stylesheet&apos;</span><span class="token punctuation">)</span>
-
-<span class="token function">render</span><span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>Provider renderer<span class="token operator">=</span><span class="token punctuation">{</span>renderer<span class="token punctuation">}</span> mountNode<span class="token operator">=</span><span class="token punctuation">{</span>mountNode<span class="token punctuation">}</span><span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>View style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
-      <span class="token operator">&lt;</span>Box grow<span class="token operator">&gt;</span>
-        Hello World
-      <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>View<span class="token operator">&gt;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
-  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;app&apos;</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span>
-</code></pre>
+<ul>
+<li><a href="usage/Basic.html">Basic</a></li>
+<li><a href="usage/Advanced.html">Advanced</a></li>
+</ul>
 
                                 
                                 </section>
@@ -353,7 +330,7 @@ After setting up react-fela, you can simply import any Kilvin component and use 
                 </a>
                 
                 
-                <a href="Components.html" class="navigation navigation-next " aria-label="Next page: 3. Components">
+                <a href="usage/Basic.html" class="navigation navigation-next " aria-label="Next page: 2. Basic">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -364,7 +341,7 @@ After setting up react-fela, you can simply import any Kilvin component and use 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Usage","level":"1.3","depth":1,"next":{"title":"3. Components","level":"1.4","depth":1,"path":"docs/Components.md","ref":"docs/Components.md","articles":[{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},{"title":"3.3. ScrollView","level":"1.4.3","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},{"title":"3.4. Spacer","level":"1.4.4","depth":2,"path":"docs/components/Spacer.md","ref":"docs/components/Spacer.md","articles":[]},{"title":"3.5. Text","level":"1.4.5","depth":2,"path":"docs/components/Text.md","ref":"docs/components/Text.md","articles":[]},{"title":"3.6. View","level":"1.4.6","depth":2,"path":"docs/components/View.md","ref":"docs/components/View.md","articles":[]}]},"previous":{"title":"1. Introduction","level":"1.2","depth":1,"path":"docs/Introduction.md","ref":"docs/Introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/rofrischmann/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/rofrischmann/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Frischmann <robin@rofrischmann.de>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/Usage.md","mtime":"2016-12-04T14:19:08.000Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2016-12-06T12:42:10.599Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. Usage","level":"1.3","depth":1,"next":{"title":"2. Basic","level":"1.3.1","depth":2,"path":"docs/usage/Basic.md","ref":"docs/usage/Basic.md","articles":[]},"previous":{"title":"1. Introduction","level":"1.2","depth":1,"path":"docs/Introduction.md","ref":"docs/Introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/Usage.md","mtime":"2020-03-25T10:33:42.870Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-03-25T10:37:35.698Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
