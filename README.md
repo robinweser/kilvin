@@ -5,9 +5,7 @@ It is build with [Fela](https://github.com/robinweser/fela/) and requires [react
 
 Each component is carefully crafted and well tested in production.
 
-<img alt="npm downloads" src="https://img.shields.io/npm/dm/kilvin.svg">
-<img alt="npm version" src="https://badge.fury.io/js/kilvin.svg">
-<img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.93kb-brightgreen.svg">
+<img alt="npm downloads" src="https://img.shields.io/npm/dm/kilvin.svg"><img alt="npm version" src="https://badge.fury.io/js/kilvin.svg"><img alt="gzipped size" src="https://img.shields.io/badge/gzipped-0.93kb-brightgreen.svg">
 
 ## Installation
 
