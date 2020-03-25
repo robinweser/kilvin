@@ -297,8 +297,8 @@
 <p>Absolute is component that is positioned <code>absolute</code>.<br>
 It renders a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Box</span><span class="token punctuation">&gt;</span></span></code> component with the following additional CSS defaults:</p>
 <h3 id="defaults">Defaults</h3>
+<p>Those defaults are added on top of the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Box</span><span class="token punctuation">&gt;</span></span></code> defaults.</p>
 <pre class="language-"><code class="lang-CSS">{
-  display: flex;
   position: absolute
 }
 </code></pre>
@@ -333,16 +333,6 @@ It renders a <code><span class="token tag"><span class="token tag"><span class="
 <td>CSS <code>left</code> property</td>
 </tr>
 <tr>
-<td>width</td>
-<td><em>(length)</em></td>
-<td>CSS <code>width</code> property</td>
-</tr>
-<tr>
-<td>height</td>
-<td><em>(length)</em></td>
-<td>CSS <code>height</code> property</td>
-</tr>
-<tr>
 <td><strong>Shortcuts</strong></td>
 <td></td>
 <td></td>
@@ -354,6 +344,7 @@ It renders a <code><span class="token tag"><span class="token tag"><span class="
 </tr>
 </tbody>
 </table>
+<p>In addition to those props, Absolute also supports all the other <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Box</span><span class="token punctuation">&gt;</span></span></code> props.</p>
 <h3 id="example">Example</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Absolute <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;kilvin&apos;</span>
 
@@ -364,7 +355,7 @@ It renders a <code><span class="token tag"><span class="token tag"><span class="
     width<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">}</span>
     left<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
     top<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span>
-    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
     <span class="token constant">I</span> am a <span class="token number">100</span>px sized box fixed <span class="token keyword">in</span> the top<span class="token operator">-</span>left corner
   <span class="token operator">&lt;</span><span class="token operator">/</span>Absolute<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span>
@@ -413,7 +404,7 @@ It renders a <code><span class="token tag"><span class="token tag"><span class="
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1. Absolute","level":"1.4.1","depth":2,"next":{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},"previous":{"title":"3. Components","level":"1.4","depth":1,"path":"docs/Components.md","ref":"docs/Components.md","articles":[{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},{"title":"3.3. ScrollView","level":"1.4.3","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},{"title":"3.4. Spacer","level":"1.4.4","depth":2,"path":"docs/components/Spacer.md","ref":"docs/components/Spacer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Absolute.md","mtime":"2020-03-25T09:46:47.478Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-03-25T10:56:38.726Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1. Absolute","level":"1.4.1","depth":2,"next":{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},"previous":{"title":"3. Components","level":"1.4","depth":1,"path":"docs/Components.md","ref":"docs/Components.md","articles":[{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},{"title":"3.3. ScrollView","level":"1.4.3","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},{"title":"3.4. Spacer","level":"1.4.4","depth":2,"path":"docs/components/Spacer.md","ref":"docs/components/Spacer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Absolute.md","mtime":"2020-03-25T10:59:36.023Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-03-25T11:02:42.769Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
