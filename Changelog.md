@@ -2,6 +2,10 @@
 
 ## 2.0
 
+### 2.0.3
+
+- improved how the baselineGrid is applied
+
 ### 2.0.2
 
 - readded `-webkit-overflow-scrolling: touch` to `<ScrollView>`
