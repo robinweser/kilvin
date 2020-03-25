@@ -2,6 +2,10 @@
 
 ## 2.0
 
+### 2.0.4
+
+- added missing (peer)Dependencies
+
 ### 2.0.3
 
 - improved how the baselineGrid is applied

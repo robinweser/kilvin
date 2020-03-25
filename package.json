@@ -4,7 +4,7 @@
   "repository": "https://github.com/robinweser/kilvin/",
   "author": "Robin Weser",
   "license": "MIT",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -40,8 +40,12 @@
     "build:lib": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"src/__tests__\" --copy-files",
     "release": "yarn build && npm publish && yarn docs"
   },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
   "peerDependecies": {
-    "react-fela": "^11.2.0"
+    "react-fela": "^11.2.0",
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
