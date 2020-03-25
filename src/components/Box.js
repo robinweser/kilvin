@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Children, forwardRef } from 'react'
 import { useFela } from 'react-fela'
 
-import Spacer from '../spacer'
+import Spacer from './Spacer'
 
 import applyMultiplier from '../utils/applyMultiplier'
 
