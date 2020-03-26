@@ -140,7 +140,7 @@ Box.defaultProps = {
   wrap: 'nowrap',
 }
 
-const ruleType = PropTypes.oneOf([PropTypes.object, PropTypes.func])
+const ruleType = PropTypes.oneOfType([PropTypes.object, PropTypes.func])
 
 Box.propTypes = {
   /** The HTML node that is rendered. */
