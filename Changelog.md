@@ -2,6 +2,10 @@
 
 ## 2.0
 
+### 2.0.8
+
+- improved the prop types for `<Box>`
+
 ### 2.0.7
 
 - fixed an issue with `0` values for baselineGrid multiplies
