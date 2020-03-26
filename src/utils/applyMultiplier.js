@@ -1,6 +1,6 @@
 function applyFactor(factor) {
   return value => {
-    if (!value) {
+    if (value === undefined || value === null) {
       return undefined
     }
 

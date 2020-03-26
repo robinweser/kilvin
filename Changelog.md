@@ -2,6 +2,10 @@
 
 ## 2.0
 
+### 2.0.7
+
+- fixed an issue with `0` values for baselineGrid multiplies
+
 ### 2.0.5 & 2.0.6
 
 - fixed wrong import paths
