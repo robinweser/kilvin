@@ -140,13 +140,15 @@ Box.defaultProps = {
   wrap: 'nowrap',
 }
 
+const ruleType = PropTypes.oneOf([PropTypes.object, PropTypes.func])
+
 Box.propTypes = {
   /** The HTML node that is rendered. */
   as: PropTypes.string,
   /** Adds a custom CSS class. */
   className: PropTypes.string,
   /** Extends the Fela style object. */
-  extend: PropTypes.object,
+  extend: PropTypes.oneOfType([ruleType, PropTypes.arrayOf(ruleType)]),
   /** Adds inline styles. */
   style: PropTypes.object,
   /** Adds spacing between children based on the baselineGrid. */

@@ -4,7 +4,7 @@
   "repository": "https://github.com/robinweser/kilvin/",
   "author": "Robin Weser",
   "license": "MIT",
-  "version": "2.0.6",
+  "version": "2.0.8",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
