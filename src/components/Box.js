@@ -25,19 +25,20 @@ function renderChildren(children, spaceType, space, direction) {
   const filledDir = fillArrayByLength(dirArr, length)
   const filledSpace = fillArrayByLength(spaceArr, length)
 
+  const margins = {
+    marginRight: filledDir.map((dir, i) =>
+      dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
+    ),
+    marginBottom: filledDir.map((dir, i) =>
+      dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
+    ),
+  }
+
   return Children.toArray(children).map((child, index, arr) =>
     index === arr.length - 1 ? (
-      child
+      <Box>{child}</Box>
     ) : (
-      <Box
-        marginRight={filledDir.map((dir, i) =>
-          dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
-        )}
-        marginBottom={filledDir.map((dir, i) =>
-          dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
-        )}>
-        {child}
-      </Box>
+      <Box {...margins}>{child}</Box>
     )
   )
 }
