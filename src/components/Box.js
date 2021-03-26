@@ -8,6 +8,13 @@ import applyMultiplier from '../utils/applyMultiplier'
 import fillArrayByLength from '../utils/fillArrayByLength'
 import arrayifyValue from '../utils/arrayifyValue'
 
+import {
+  ruleType,
+  responsiveProp,
+  responsiveNumberProp,
+  responsiveStringProp,
+} from '../utils/propTypes'
+
 function renderChildren(children, spaceType, space, direction) {
   if (spaceType === 'spacer') {
     return Children.toArray(children).map((child, index, arr) => (
@@ -139,22 +146,6 @@ const Box = forwardRef(
 Box.displayName = 'Box'
 export default Box
 
-const responsiveProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
-  PropTypes.string,
-  PropTypes.number,
-])
-
-const responsiveNumberProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.number),
-  PropTypes.number,
-])
-
-const responsiveStringProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.string),
-  PropTypes.string,
-])
-
 const directionProp = PropTypes.oneOfType([
   PropTypes.arrayOf(
     PropTypes.oneOf(['row', 'column', 'row-reverse', 'column-reverse'])
@@ -173,12 +164,6 @@ Box.defaultProps = {
   wrap: 'nowrap',
   spaceType: 'spacer',
 }
-
-const ruleType = PropTypes.oneOfType([
-  PropTypes.object,
-  PropTypes.func,
-  PropTypes.array,
-])
 
 Box.propTypes = {
   /** The HTML node that is rendered. */
