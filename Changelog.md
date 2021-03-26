@@ -2,7 +2,7 @@
 
 ## 2.0
 
-### 2.0.8 & 2.0.9
+### 2.0.8 - 2.0.11
 
 - improved the prop types for `<Box>`
 

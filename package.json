@@ -4,7 +4,7 @@
   "repository": "https://github.com/robinweser/kilvin/",
   "author": "Robin Weser",
   "license": "MIT",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -56,13 +56,13 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "cross-env": "^6.0.3",
-    "rimraf": "^3.0.0",
     "gh-pages": "^2.2.0",
     "gitbook-cli": "^2.3.0",
     "gitbook-plugin-advanced-emoji": "^0.2.2",
     "gitbook-plugin-anker-enable": "0.0.4",
     "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-github": "^3.0.0",
-    "gitbook-plugin-prism": "^2.4.0"
+    "gitbook-plugin-prism": "^2.4.0",
+    "rimraf": "^3.0.0"
   }
 }
