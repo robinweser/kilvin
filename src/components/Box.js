@@ -8,6 +8,40 @@ import applyMultiplier from '../utils/applyMultiplier'
 import fillArrayByLength from '../utils/fillArrayByLength'
 import arrayifyValue from '../utils/arrayifyValue'
 
+function renderChildren(children, spaceType, space, direction) {
+  if (spaceType === 'spacer') {
+    return Children.toArray(children).map((child, index, arr) => (
+      <React.Fragment key={index}>
+        {child}
+        {index === arr.length - 1 ? null : <Spacer size={space} />}
+      </React.Fragment>
+    ))
+  }
+
+  const dirArr = arrayifyValue(direction)
+  const spaceArr = arrayifyValue(space)
+
+  const length = Math.max(dirArr.length, spaceArr.length)
+  const filledDir = fillArrayByLength(dirArr, length)
+  const filledSpace = fillArrayByLength(spaceArr, length)
+
+  return Children.toArray(children).map((child, index, arr) =>
+    index === arr.length - 1 ? (
+      child
+    ) : (
+      <Box
+        marginRight={filledDir.map((dir, i) =>
+          dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
+        )}
+        marginBottom={filledDir.map((dir, i) =>
+          dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
+        )}>
+        {child}
+      </Box>
+    )
+  )
+}
+
 const Box = forwardRef(
   (
     {
@@ -94,39 +128,7 @@ const Box = forwardRef(
           extend
         )}>
         {space
-          ? Children.toArray(children).map((child, index, arr) => {
-              if (spaceType === 'spacer') {
-                return (
-                  <React.Fragment key={index}>
-                    {child}
-                    {index === arr.length - 1 ? null : <Spacer size={space} />}
-                  </React.Fragment>
-                )
-              }
-
-              const dirArr = arrayifyValue(direction)
-              const spaceArr = arrayifyValue(space)
-
-              const length = Math.max(dirArr.length, spaceArr.length)
-              const filledDir = fillArrayByLength(dirArr, length)
-              const filledSpace = fillArrayByLength(spaceArr, length)
-
-              if (index === arr.length - 1) {
-                return child
-              }
-
-              return (
-                <Box
-                  marginRight={filledDir.map((dir, i) =>
-                    dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
-                  )}
-                  marginBottom={filledDir.map((dir, i) =>
-                    dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
-                  )}>
-                  {child}
-                </Box>
-              )
-            })
+          ? renderChildren(children, spaceType, space, direction)
           : children}
       </As>
     )
