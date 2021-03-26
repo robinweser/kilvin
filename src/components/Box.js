@@ -5,6 +5,8 @@ import { useFela } from 'react-fela'
 import Spacer from './Spacer'
 
 import applyMultiplier from '../utils/applyMultiplier'
+import fillArrayByLength from '../utils/fillArrayByLength'
+import arrayifyValue from '../utils/arrayifyValue'
 
 const Box = forwardRef(
   (
@@ -14,6 +16,7 @@ const Box = forwardRef(
       extend,
       style: inlineStyle,
       space,
+      spaceType,
       className,
       padding,
       paddingLeft,
@@ -91,12 +94,39 @@ const Box = forwardRef(
           extend
         )}>
         {space
-          ? Children.toArray(children).map((child, index, arr) => (
-              <React.Fragment key={index}>
-                {child}
-                {index === arr.length - 1 ? null : <Spacer size={space} />}
-              </React.Fragment>
-            ))
+          ? Children.toArray(children).map((child, index, arr) => {
+              if (spaceType === 'spacer') {
+                return (
+                  <React.Fragment key={index}>
+                    {child}
+                    {index === arr.length - 1 ? null : <Spacer size={space} />}
+                  </React.Fragment>
+                )
+              }
+
+              const dirArr = arrayifyValue(direction)
+              const spaceArr = arrayifyValue(space)
+
+              const length = Math.max(dirArr.length, spaceArr.length)
+              const filledDir = fillArrayByLength(dirArr, length)
+              const filledSpace = fillArrayByLength(spaceArr, length)
+
+              if (index === arr.length - 1) {
+                return child
+              }
+
+              return (
+                <Box
+                  marginRight={filledDir.map((dir, i) =>
+                    dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
+                  )}
+                  marginBottom={filledDir.map((dir, i) =>
+                    dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
+                  )}>
+                  {child}
+                </Box>
+              )
+            })
           : children}
       </As>
     )
@@ -138,9 +168,14 @@ Box.defaultProps = {
   display: 'flex',
   alignItems: 'stretch',
   wrap: 'nowrap',
+  spaceType: 'spacer',
 }
 
-const ruleType = PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.array])
+const ruleType = PropTypes.oneOfType([
+  PropTypes.object,
+  PropTypes.func,
+  PropTypes.array,
+])
 
 Box.propTypes = {
   /** The HTML node that is rendered. */
@@ -153,6 +188,8 @@ Box.propTypes = {
   style: PropTypes.object,
   /** Adds spacing between children based on the baselineGrid. */
   space: responsiveNumberProp,
+  /** Whether spacing is applied using a container or spacer element */
+  spaceType: PropTypes.oneOf(['spacer', 'container']),
   /** Adds left padding based on the baselineGrid. */
   paddingLeft: responsiveProp,
   /** Adds right padding based on the baselineGrid. */
