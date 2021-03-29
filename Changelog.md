@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0
+
+### 3.0.0
+
+- introducing a new `<Grid>` component
+- added a new `spaceType` prop to `<Box>`
+- `<Spacer>` now disappears when `space` is passed a `0`
+
 ## 2.0
 
 ### 2.0.8 - 2.0.11
