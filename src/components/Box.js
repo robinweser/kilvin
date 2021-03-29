@@ -166,8 +166,15 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
+  /** A JSX node */
+  children: PropTypes.node,
   /** The HTML node that is rendered. */
-  as: PropTypes.string,
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.elementType,
+    PropTypes.func,
+  ]),
   /** Adds a custom CSS class. */
   className: PropTypes.string,
   /** Extends the Fela style object. */

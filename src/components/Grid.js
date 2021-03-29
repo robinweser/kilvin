@@ -15,7 +15,7 @@ const Grid = forwardRef(
     {
       as: As,
       children,
-      style: inlineStyle,
+      style,
       className,
       extend,
       gap,
@@ -31,7 +31,7 @@ const Grid = forwardRef(
     return (
       <As
         {...props}
-        style={inlineStyle}
+        style={style}
         ref={ref}
         className={css(
           {
@@ -59,8 +59,15 @@ Grid.defaultProps = {
 }
 
 Grid.propTypes = {
+  /** A JSX node */
+  children: PropTypes.node,
   /** The HTML node that is rendered. */
-  as: PropTypes.string,
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.elementType,
+    PropTypes.func,
+  ]),
   /** Adds a custom CSS class. */
   className: PropTypes.string,
   /** Extends the Fela style object. */

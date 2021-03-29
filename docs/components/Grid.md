@@ -4,15 +4,15 @@ Grid is an alternative to Box whenever we want to use [CSS Grid Layout](https://
 
 ### Props
 
-| Property  |  Value              | Description                                   |
-| --------- | ------------------- | --------------------------------------------- |
-| as        | _(React Component)_ | The component it renders to. (default: `div`) |
-| extend    | _(Style Object)_    | Extends the Fela style object                 |
-| style     | _(Style Object)_    | Inline styles                                 |
-| className | _(string)_          | Custom CSS classes                            |
-| gap       | _(length)_          | CSS `grid-gap` property                       |
-| columns   | _(length)_          | CSS `grid-template-columns` property          |
-| rows      | _(length)_          | CSS `grid-template-rows` property             |
+| Property  |  Value                                                                                          | Description                                   |
+| --------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| as        | _(React Component)_                                                                             | The component it renders to. (default: `div`) |
+| extend    | _(Style Object)_                                                                                | Extends the Fela style object                 |
+| style     | _(Style Object)_                                                                                | Inline styles                                 |
+| className | _(string)_                                                                                      | Custom CSS classes                            |
+| gap       | _(length)_                                                                                      | CSS `grid-gap` property                       |
+| columns   | [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) | CSS `grid-template-columns` property          |
+| rows      | [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)       | CSS `grid-template-rows` property             |
 
 ### Defaults
 
@@ -26,7 +26,7 @@ Grid is an alternative to Box whenever we want to use [CSS Grid Layout](https://
 
 ### BaselineGrid
 
-The `grid` prop acts as multiples of an optional `baselineGrid` that can be passed with a theme.<br>
+The `gap` prop acts as multiples of an optional `baselineGrid` that can be passed with a theme.<br>
 It defaults to `1` and thus works without a theme as well.
 
 ### Example
@@ -35,7 +35,7 @@ It defaults to `1` and thus works without a theme as well.
 import { Grid, Box } from 'kilvin'
 
 const Centered = () => (
-  <Grid gap={2} columns={['1f', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
+  <Grid gap={2} columns={['1fr', 'repeat(2, 1fr)', 'repeat(3, 1fr)']}>
     <Box height={100} extend={{ backgroundColor: 'red' }}>
       Cell 1
     </Box>
