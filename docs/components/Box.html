@@ -334,6 +334,16 @@ It also defines box-model properties such as padding, margin and border.<br></p>
 <td>Extends the Fela style object</td>
 </tr>
 <tr>
+<td>style</td>
+<td><em>(Style Object)</em></td>
+<td>Inline styles</td>
+</tr>
+<tr>
+<td>className</td>
+<td><em>(string)</em></td>
+<td>Custom CSS classes</td>
+</tr>
+<tr>
 <td>display</td>
 <td><em>(number)</em></td>
 <td>CSS <code>display</code> property</td>
@@ -468,14 +478,13 @@ It also defines box-model properties such as padding, margin and border.<br></p>
 <h3 id="defaults">Defaults</h3>
 <pre class="language-"><code class="lang-CSS">{
   display: flex;
-  overflow: hidden;
-  max-width: 100%;
+  box-sizing: border-box;
+  flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: flex-start;
-  align-self: stretch
+  align-items: stretch
 }
 </code></pre>
 <h3 id="baselinegrid">BaselineGrid</h3>
@@ -487,13 +496,13 @@ It defaults to <code>1</code> and thus works without a theme as well.</p>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Centered</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> justifyContent<span class="token operator">=</span><span class="token string">&quot;center&quot;</span><span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-start&quot;</span> <span class="token keyword">extends</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-start&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
       Start
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;center&quot;</span> <span class="token keyword">extends</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;center&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
       Start
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-end&quot;</span> <span class="token keyword">extends</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;green&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-end&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;green&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
       Start
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
@@ -543,7 +552,7 @@ It defaults to <code>1</code> and thus works without a theme as well.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2. Box","level":"1.4.2","depth":2,"next":{"title":"3.3. ScrollView","level":"1.4.3","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},"previous":{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Box.md","mtime":"2020-03-25T11:10:21.465Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2020-04-14T13:18:17.807Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2. Box","level":"1.4.2","depth":2,"next":{"title":"3.3. ScrollView","level":"1.4.3","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},"previous":{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Box.md","mtime":"2021-03-29T08:50:26.392Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2021-03-29T08:56:22.276Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
