@@ -41,7 +41,6 @@
     "release": "yarn build && npm publish && yarn docs"
   },
   "dependencies": {
-    "gitbook-plugin-github": "^2.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependecies": {
@@ -64,7 +63,6 @@
     "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-github": "^3.0.0",
     "gitbook-plugin-prism": "^2.4.0",
-    "graceful-fs": "3.0.0",
     "rimraf": "^3.0.0"
   }
 }

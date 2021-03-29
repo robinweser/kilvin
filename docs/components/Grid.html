@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head>
-        <title>3.2. Box · Kilvin</title>
+        <title>3.3. Grid · Kilvin</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Grid.html" />
+    <link rel="next" href="ScrollView.html" />
     
     
-    <link rel="prev" href="Absolute.html" />
+    <link rel="prev" href="Box.html" />
     
 
     </head>
@@ -191,7 +191,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.2" data-path="Box.html">
+        <li class="chapter " data-level="1.4.2" data-path="Box.html">
             
                 <a href="Box.html">
             
@@ -204,7 +204,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="Grid.html">
+        <li class="chapter active" data-level="1.4.3" data-path="Grid.html">
             
                 <a href="Grid.html">
             
@@ -291,7 +291,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >3.2. Box</a>
+        <a href="../.." >3.3. Grid</a>
     </h1>
 </div>
 
@@ -306,22 +306,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="box">Box</h1>
-<p>Box is probably the most important component.<br>
-It is used to craft detailed layouts based on flexbox.<br>
-It also defines box-model properties such as padding, margin and border.<br></p>
-<p>It ships with sensible flexbox defaults:</p>
-<pre class="language-"><code>{
-  box-sizing: border-box;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: stretch
-}
-</code></pre><h3 id="props">Props</h3>
+                                <h1 id="grid">Grid</h1>
+<p>Grid is an alternative to Box whenever we want to use <a href="https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout" _target="blank">CSS Grid Layout</a> instead.<br></p>
+<h3 id="props">Props</h3>
 <table>
 <thead>
 <tr>
@@ -331,11 +318,6 @@ It also defines box-model properties such as padding, margin and border.<br></p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>space</td>
-<td><em>(number)</em></td>
-<td>Adds space in between child components</td>
-</tr>
 <tr>
 <td>as</td>
 <td><em>(React Component)</em></td>
@@ -357,171 +339,50 @@ It also defines box-model properties such as padding, margin and border.<br></p>
 <td>Custom CSS classes</td>
 </tr>
 <tr>
-<td>display</td>
-<td><em>(number)</em></td>
-<td>CSS <code>display</code> property</td>
-</tr>
-<tr>
-<td>width</td>
+<td>gap</td>
 <td><em>(length)</em></td>
-<td>CSS <code>width</code> property</td>
+<td>CSS <code>grid-gap</code> property</td>
 </tr>
 <tr>
-<td>minWidth</td>
-<td><em>(length)</em></td>
-<td>CSS <code>minWidth</code> property</td>
+<td>columns</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" _target="blank">grid-template-columns</a></td>
+<td>CSS <code>grid-template-columns</code> property</td>
 </tr>
 <tr>
-<td>maxWidth</td>
-<td><em>(length)</em></td>
-<td>CSS <code>maxWidth</code> property</td>
-</tr>
-<tr>
-<td>height</td>
-<td><em>(length)</em></td>
-<td>CSS <code>height</code> property</td>
-</tr>
-<tr>
-<td>minHeight</td>
-<td><em>(length)</em></td>
-<td>CSS <code>minHeight</code> property</td>
-</tr>
-<tr>
-<td>maxHeight</td>
-<td><em>(length)</em></td>
-<td>CSS <code>maxHeight</code> property</td>
-</tr>
-<tr>
-<td>padding</td>
-<td><em>(length)</em></td>
-<td>CSS <code>padding</code> property</td>
-</tr>
-<tr>
-<td>paddingTop</td>
-<td><em>(length)</em></td>
-<td>CSS <code>paddingTop</code> property</td>
-</tr>
-<tr>
-<td>paddingRight</td>
-<td><em>(length)</em></td>
-<td>CSS <code>paddingRight</code> property</td>
-</tr>
-<tr>
-<td>paddingBottom</td>
-<td><em>(length)</em></td>
-<td>CSS <code>paddingBottom</code> property</td>
-</tr>
-<tr>
-<td>paddingLeft</td>
-<td><em>(length)</em></td>
-<td>CSS <code>paddingLeft</code> property</td>
-</tr>
-<tr>
-<td>margin</td>
-<td><em>(length)</em></td>
-<td>CSS <code>margin</code> property</td>
-</tr>
-<tr>
-<td>marginTop</td>
-<td><em>(length)</em></td>
-<td>CSS <code>marginTop</code> property</td>
-</tr>
-<tr>
-<td>marginRight</td>
-<td><em>(length)</em></td>
-<td>CSS <code>marginRight</code> property</td>
-</tr>
-<tr>
-<td>marginBottom</td>
-<td><em>(length)</em></td>
-<td>CSS <code>marginBottom</code> property</td>
-</tr>
-<tr>
-<td>marginLeft</td>
-<td><em>(length)</em></td>
-<td>CSS <code>marginLeft</code> property</td>
-</tr>
-<tr>
-<td>grow</td>
-<td><em>(number)</em></td>
-<td>CSS <code>flex-grow</code> property</td>
-</tr>
-<tr>
-<td>shrink</td>
-<td><em>(number)</em></td>
-<td>CSS <code>flex-shrink</code> property</td>
-</tr>
-<tr>
-<td>basis</td>
-<td><em>(length)</em></td>
-<td>CSS <code>flex-basis</code> property</td>
-</tr>
-<tr>
-<td>flex</td>
-<td><em>(flex-grow)</em> <em>(flex-shrink)</em> <em>(flex-basis)</em></td>
-<td>CSS <code>flex</code> property</td>
-</tr>
-<tr>
-<td>justifyContent</td>
-<td><code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code></td>
-<td>CSS <code>justify-content</code> property</td>
-</tr>
-<tr>
-<td>alignContent</td>
-<td><code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code></td>
-<td>CSS <code>align-content</code> property</td>
-</tr>
-<tr>
-<td>alignItems</td>
-<td><code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code></td>
-<td>CSS <code>align-items</code> property</td>
-</tr>
-<tr>
-<td>alignSelf</td>
-<td><code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code></td>
-<td>CSS <code>align-self</code> property</td>
-</tr>
-<tr>
-<td>order</td>
-<td><em>(number)</em></td>
-<td>CSS <code>order</code> property</td>
+<td>rows</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" _target="blank">grid-template-rows</a></td>
+<td>CSS <code>grid-template-rows</code> property</td>
 </tr>
 </tbody>
 </table>
 <h3 id="defaults">Defaults</h3>
 <pre class="language-"><code class="lang-CSS">{
-  display: flex;
+  display: grid;
   box-sizing: border-box;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: stretch
+  grid-gap: 0
 }
 </code></pre>
 <h3 id="baselinegrid">BaselineGrid</h3>
-<p>Some props act as multiples of an optional <code>baselineGrid</code> that can be passed with a theme.<br>
+<p>The <code>gap</code> prop acts as multiples of an optional <code>baselineGrid</code> that can be passed with a theme.<br>
 It defaults to <code>1</code> and thus works without a theme as well.</p>
-<p>Those are all <code>padding</code> and <code>margin</code> values.</p>
 <h3 id="example">Example</h3>
-<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Box <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;kilvin&apos;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Grid<span class="token punctuation">,</span> Box <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;kilvin&apos;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Centered</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> justifyContent<span class="token operator">=</span><span class="token string">&quot;center&quot;</span><span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-start&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-      Start
+  <span class="token operator">&lt;</span>Grid gap<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span> columns<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token string">&apos;1fr&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;repeat(2, 1fr)&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;repeat(3, 1fr)&apos;</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Box height<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">}</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;red&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      Cell <span class="token number">1</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;center&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-      Start
+    <span class="token operator">&lt;</span>Box height<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">}</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;blue&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      Cell <span class="token number">2</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span>Box grow<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span> alignItems<span class="token operator">=</span><span class="token string">&quot;flex-end&quot;</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;green&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-      Start
+    <span class="token operator">&lt;</span>Box height<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">}</span> extend<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> backgroundColor<span class="token operator">:</span> <span class="token string">&apos;green&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      Cell <span class="token number">3</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>Box<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Grid<span class="token operator">&gt;</span>
 <span class="token punctuation">)</span>
 </code></pre>
-<p><img src="../res/Box.png"></p>
+<p><img src="../res/Grid.png"></p>
 
                                 
                                 </section>
@@ -549,12 +410,12 @@ It defaults to <code>1</code> and thus works without a theme as well.</p>
 
             
                 
-                <a href="Absolute.html" class="navigation navigation-prev " aria-label="Previous page: 3.1. Absolute">
+                <a href="Box.html" class="navigation navigation-prev " aria-label="Previous page: 3.2. Box">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Grid.html" class="navigation navigation-next " aria-label="Next page: 3.3. Grid">
+                <a href="ScrollView.html" class="navigation navigation-next " aria-label="Next page: 3.4. ScrollView">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -565,7 +426,7 @@ It defaults to <code>1</code> and thus works without a theme as well.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2. Box","level":"1.4.2","depth":2,"next":{"title":"3.3. Grid","level":"1.4.3","depth":2,"path":"docs/components/Grid.md","ref":"docs/components/Grid.md","articles":[]},"previous":{"title":"3.1. Absolute","level":"1.4.1","depth":2,"path":"docs/components/Absolute.md","ref":"docs/components/Absolute.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Box.md","mtime":"2021-03-29T08:50:26.392Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2021-03-29T10:03:17.905Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.3. Grid","level":"1.4.3","depth":2,"next":{"title":"3.4. ScrollView","level":"1.4.4","depth":2,"path":"docs/components/ScrollView.md","ref":"docs/components/ScrollView.md","articles":[]},"previous":{"title":"3.2. Box","level":"1.4.2","depth":2,"path":"docs/components/Box.md","ref":"docs/components/Box.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anker-enable","advanced-emoji"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/robinweser/kilvin/"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"https://github.com/robinweser/kilvin/tree/master","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Robin Weser <contact@weser.io>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Kilvin","language":"en","gitbook":"3.1.0","description":"Official documentation for Kilvin"},"file":{"path":"docs/components/Grid.md","mtime":"2021-03-29T08:50:26.392Z","type":"markdown"},"gitbook":{"version":"3.1.0","time":"2021-03-29T10:03:17.905Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
