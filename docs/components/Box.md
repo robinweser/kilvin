@@ -26,6 +26,8 @@ It ships with sensible flexbox defaults:
 | space          | _(number)_                                                          | Adds space in between child components        |
 | as             | _(React Component)_                                                 | The component it renders to. (default: `div`) |
 | extend         | _(Style Object)_                                                    | Extends the Fela style object                 |
+| style          | _(Style Object)_                                                    | Inline styles                                 |
+| className      | _(string)_                                                          | Custom CSS classes                            |
 | display        | _(number)_                                                          | CSS `display` property                        |
 | width          | _(length)_                                                          | CSS `width` property                          |
 | minWidth       | _(length)_                                                          | CSS `minWidth` property                       |
@@ -58,14 +60,13 @@ It ships with sensible flexbox defaults:
 ```CSS
 {
   display: flex;
-  overflow: hidden;
-  max-width: 100%;
+  box-sizing: border-box;
+  flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-content: flex-start;
-  align-self: stretch
+  align-items: stretch
 }
 ```
 
@@ -83,13 +84,13 @@ import { Box } from 'kilvin'
 
 const Centered = () => (
   <Box grow={1} justifyContent="center">
-    <Box grow={1} alignItems="flex-start" extends={{ backgroundColor: 'red' }}>
+    <Box grow={1} alignItems="flex-start" extend={{ backgroundColor: 'red' }}>
       Start
     </Box>
-    <Box grow={2} alignItems="center" extends={{ backgroundColor: 'blue' }}>
+    <Box grow={2} alignItems="center" extend={{ backgroundColor: 'blue' }}>
       Start
     </Box>
-    <Box grow={1} alignItems="flex-end" extends={{ backgroundColor: 'green' }}>
+    <Box grow={1} alignItems="flex-end" extend={{ backgroundColor: 'green' }}>
       Start
     </Box>
   </Box>

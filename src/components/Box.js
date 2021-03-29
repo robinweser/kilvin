@@ -5,6 +5,50 @@ import { useFela } from 'react-fela'
 import Spacer from './Spacer'
 
 import applyMultiplier from '../utils/applyMultiplier'
+import fillArrayByLength from '../utils/fillArrayByLength'
+import arrayifyValue from '../utils/arrayifyValue'
+
+import {
+  ruleType,
+  responsiveProp,
+  responsiveNumberProp,
+  responsiveStringProp,
+} from '../utils/propTypes'
+
+function renderChildren(children, spaceType, space, direction) {
+  if (spaceType === 'spacer') {
+    return Children.toArray(children).map((child, index, arr) => (
+      <React.Fragment key={index}>
+        {child}
+        {index === arr.length - 1 ? null : <Spacer size={space} />}
+      </React.Fragment>
+    ))
+  }
+
+  const dirArr = arrayifyValue(direction)
+  const spaceArr = arrayifyValue(space)
+
+  const length = Math.max(dirArr.length, spaceArr.length)
+  const filledDir = fillArrayByLength(dirArr, length)
+  const filledSpace = fillArrayByLength(spaceArr, length)
+
+  const margins = {
+    marginRight: filledDir.map((dir, i) =>
+      dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
+    ),
+    marginBottom: filledDir.map((dir, i) =>
+      dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
+    ),
+  }
+
+  return Children.toArray(children).map((child, index, arr) =>
+    index === arr.length - 1 ? (
+      <Box>{child}</Box>
+    ) : (
+      <Box {...margins}>{child}</Box>
+    )
+  )
+}
 
 const Box = forwardRef(
   (
@@ -14,6 +58,7 @@ const Box = forwardRef(
       extend,
       style: inlineStyle,
       space,
+      spaceType,
       className,
       padding,
       paddingLeft,
@@ -91,12 +136,7 @@ const Box = forwardRef(
           extend
         )}>
         {space
-          ? Children.toArray(children).map((child, index, arr) => (
-              <React.Fragment key={index}>
-                {child}
-                {index === arr.length - 1 ? null : <Spacer size={space} />}
-              </React.Fragment>
-            ))
+          ? renderChildren(children, spaceType, space, direction)
           : children}
       </As>
     )
@@ -105,22 +145,6 @@ const Box = forwardRef(
 
 Box.displayName = 'Box'
 export default Box
-
-const responsiveProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
-  PropTypes.string,
-  PropTypes.number,
-])
-
-const responsiveNumberProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.number),
-  PropTypes.number,
-])
-
-const responsiveStringProp = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.string),
-  PropTypes.string,
-])
 
 const directionProp = PropTypes.oneOfType([
   PropTypes.arrayOf(
@@ -138,13 +162,19 @@ Box.defaultProps = {
   display: 'flex',
   alignItems: 'stretch',
   wrap: 'nowrap',
+  spaceType: 'spacer',
 }
 
-const ruleType = PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.array])
-
 Box.propTypes = {
+  /** A JSX node */
+  children: PropTypes.node,
   /** The HTML node that is rendered. */
-  as: PropTypes.string,
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.elementType,
+    PropTypes.func,
+  ]),
   /** Adds a custom CSS class. */
   className: PropTypes.string,
   /** Extends the Fela style object. */
@@ -153,6 +183,8 @@ Box.propTypes = {
   style: PropTypes.object,
   /** Adds spacing between children based on the baselineGrid. */
   space: responsiveNumberProp,
+  /** Whether spacing is applied using a container or spacer element */
+  spaceType: PropTypes.oneOf(['spacer', 'container']),
   /** Adds left padding based on the baselineGrid. */
   paddingLeft: responsiveProp,
   /** Adds right padding based on the baselineGrid. */
