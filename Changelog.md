@@ -2,6 +2,10 @@
 
 ## 3.0
 
+### 3.0.1
+
+- added `containerElement` to `<Box>`
+
 ### 3.0.0
 
 - introducing a new `<Grid>` component
