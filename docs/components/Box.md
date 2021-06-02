@@ -21,39 +21,41 @@ It ships with sensible flexbox defaults:
 
 ### Props
 
-| Property       |  Value                                                              | Description                                   |
-| -------------- | ------------------------------------------------------------------- | --------------------------------------------- |
-| space          | _(number)_                                                          | Adds space in between child components        |
-| as             | _(React Component)_                                                 | The component it renders to. (default: `div`) |
-| extend         | _(Style Object)_                                                    | Extends the Fela style object                 |
-| style          | _(Style Object)_                                                    | Inline styles                                 |
-| className      | _(string)_                                                          | Custom CSS classes                            |
-| display        | _(number)_                                                          | CSS `display` property                        |
-| width          | _(length)_                                                          | CSS `width` property                          |
-| minWidth       | _(length)_                                                          | CSS `minWidth` property                       |
-| maxWidth       | _(length)_                                                          | CSS `maxWidth` property                       |
-| height         | _(length)_                                                          | CSS `height` property                         |
-| minHeight      | _(length)_                                                          | CSS `minHeight` property                      |
-| maxHeight      | _(length)_                                                          | CSS `maxHeight` property                      |
-| padding        | _(length)_                                                          | CSS `padding` property                        |
-| paddingTop     | _(length)_                                                          | CSS `paddingTop` property                     |
-| paddingRight   | _(length)_                                                          | CSS `paddingRight` property                   |
-| paddingBottom  | _(length)_                                                          | CSS `paddingBottom` property                  |
-| paddingLeft    | _(length)_                                                          | CSS `paddingLeft` property                    |
-| margin         | _(length)_                                                          | CSS `margin` property                         |
-| marginTop      | _(length)_                                                          | CSS `marginTop` property                      |
-| marginRight    | _(length)_                                                          | CSS `marginRight` property                    |
-| marginBottom   | _(length)_                                                          | CSS `marginBottom` property                   |
-| marginLeft     | _(length)_                                                          | CSS `marginLeft` property                     |
-| grow           | _(number)_                                                          | CSS `flex-grow` property                      |
-| shrink         | _(number)_                                                          | CSS `flex-shrink` property                    |
-| basis          | _(length)_                                                          | CSS `flex-basis` property                     |
-| flex           | _(flex-grow)_ _(flex-shrink)_ _(flex-basis)_                        | CSS `flex` property                           |
-| justifyContent | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `justify-content` property                |
-| alignContent   | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-content` property                  |
-| alignItems     | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-items` property                    |
-| alignSelf      | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-self` property                     |
-| order          | _(number)_                                                          | CSS `order` property                          |
+| Property          |  Value                                                              | Description                                                                                      |
+| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| space             | _(number)_                                                          | Adds space in between child components                                                           |
+| spaceType         |  `spacer`, `container`                                              | Whether the space element is added in-between child components or wraps them (default: `spacer`) |
+|  containerElement | _(React Component)_                                                 | The component used to wrap children if `container` is passed to `spaceType` (default: `div`)     |
+| as                | _(React Component)_                                                 | The component it renders to (default: `div`)                                                     |
+| extend            | _(Style Object)_                                                    | Extends the Fela style object                                                                    |
+| style             | _(Style Object)_                                                    | Inline styles                                                                                    |
+| className         | _(string)_                                                          | Custom CSS classes                                                                               |
+| display           | _(number)_                                                          | CSS `display` property                                                                           |
+| width             | _(length)_                                                          | CSS `width` property                                                                             |
+| minWidth          | _(length)_                                                          | CSS `minWidth` property                                                                          |
+| maxWidth          | _(length)_                                                          | CSS `maxWidth` property                                                                          |
+| height            | _(length)_                                                          | CSS `height` property                                                                            |
+| minHeight         | _(length)_                                                          | CSS `minHeight` property                                                                         |
+| maxHeight         | _(length)_                                                          | CSS `maxHeight` property                                                                         |
+| padding           | _(length)_                                                          | CSS `padding` property                                                                           |
+| paddingTop        | _(length)_                                                          | CSS `paddingTop` property                                                                        |
+| paddingRight      | _(length)_                                                          | CSS `paddingRight` property                                                                      |
+| paddingBottom     | _(length)_                                                          | CSS `paddingBottom` property                                                                     |
+| paddingLeft       | _(length)_                                                          | CSS `paddingLeft` property                                                                       |
+| margin            | _(length)_                                                          | CSS `margin` property                                                                            |
+| marginTop         | _(length)_                                                          | CSS `marginTop` property                                                                         |
+| marginRight       | _(length)_                                                          | CSS `marginRight` property                                                                       |
+| marginBottom      | _(length)_                                                          | CSS `marginBottom` property                                                                      |
+| marginLeft        | _(length)_                                                          | CSS `marginLeft` property                                                                        |
+| grow              | _(number)_                                                          | CSS `flex-grow` property                                                                         |
+| shrink            | _(number)_                                                          | CSS `flex-shrink` property                                                                       |
+| basis             | _(length)_                                                          | CSS `flex-basis` property                                                                        |
+| flex              | _(flex-grow)_ _(flex-shrink)_ _(flex-basis)_                        | CSS `flex` property                                                                              |
+| justifyContent    | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `justify-content` property                                                                   |
+| alignContent      | `flex-start`, `flex-end`, `center`, `space-between`, `space-around` | CSS `align-content` property                                                                     |
+| alignItems        | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-items` property                                                                       |
+| alignSelf         | `flex-start`, `flex-end`, `center`, `baseline`, `stretch`           | CSS `align-self` property                                                                        |
+| order             | _(number)_                                                          | CSS `order` property                                                                             |
 
 ### Defaults
 
