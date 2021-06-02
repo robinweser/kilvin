@@ -15,7 +15,13 @@ import {
   responsiveStringProp,
 } from '../utils/propTypes'
 
-function renderChildren(children, spaceType, space, direction) {
+function renderChildren(
+  children,
+  spaceType,
+  containerElement,
+  space,
+  direction
+) {
   if (spaceType === 'spacer') {
     return Children.toArray(children).map((child, index, arr) => (
       <React.Fragment key={index}>
@@ -43,9 +49,11 @@ function renderChildren(children, spaceType, space, direction) {
 
   return Children.toArray(children).map((child, index, arr) =>
     index === arr.length - 1 ? (
-      <Box>{child}</Box>
+      <Box as={containerElement}>{child}</Box>
     ) : (
-      <Box {...margins}>{child}</Box>
+      <Box as={containerElement} {...margins}>
+        {child}
+      </Box>
     )
   )
 }
@@ -59,6 +67,7 @@ const Box = forwardRef(
       style: inlineStyle,
       space,
       spaceType,
+      containerElement,
       className,
       padding,
       paddingLeft,
@@ -136,7 +145,13 @@ const Box = forwardRef(
           extend
         )}>
         {space
-          ? renderChildren(children, spaceType, space, direction)
+          ? renderChildren(
+              children,
+              spaceType,
+              containerElement,
+              space,
+              direction
+            )
           : children}
       </As>
     )
@@ -163,6 +178,7 @@ Box.defaultProps = {
   alignItems: 'stretch',
   wrap: 'nowrap',
   spaceType: 'spacer',
+  containerElement: 'div',
 }
 
 Box.propTypes = {
@@ -185,6 +201,13 @@ Box.propTypes = {
   space: responsiveNumberProp,
   /** Whether spacing is applied using a container or spacer element */
   spaceType: PropTypes.oneOf(['spacer', 'container']),
+  /** The component/element that is rendered as a container space */
+  containerElement: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.elementType,
+    PropTypes.func,
+  ]),
   /** Adds left padding based on the baselineGrid. */
   paddingLeft: responsiveProp,
   /** Adds right padding based on the baselineGrid. */

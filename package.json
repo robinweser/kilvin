@@ -4,7 +4,7 @@
   "repository": "https://github.com/robinweser/kilvin/",
   "author": "Robin Weser",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -46,6 +46,9 @@
   "peerDependecies": {
     "react-fela": "^11.2.0",
     "react": "^16.8.0"
+  },
+  "resolutions": {
+    "**/graceful-fs": "^4.2.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
