@@ -49,9 +49,11 @@ function renderChildren(
 
   return Children.toArray(children).map((child, index, arr) =>
     index === arr.length - 1 ? (
-      <Box as={containerElement}>{child}</Box>
+      <Box as={containerElement} key={index}>
+        {child}
+      </Box>
     ) : (
-      <Box as={containerElement} {...margins}>
+      <Box as={containerElement} {...margins} index={index}>
         {child}
       </Box>
     )
