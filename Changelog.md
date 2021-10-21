@@ -2,6 +2,14 @@
 
 ## 3.0
 
+### 3.1.1
+
+- revert 3.1.0 due to regressions in behaviour
+
+### 3.1.0
+
+- new, unified `space` implementation on Box according to [Robin's blogpost](https://weser.io/blog/spacing-children-in-react)
+
 ### 3.0.1
 
 - added `containerElement` to `<Box>`
