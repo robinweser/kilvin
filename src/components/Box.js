@@ -40,10 +40,16 @@ function renderChildren(
 
   const margins = {
     marginRight: filledDir.map((dir, i) =>
-      dir === 'row' || dir === 'row-reverse' ? filledSpace[i] : 0
+      dir === 'row' ? filledSpace[i] : undefined
     ),
     marginBottom: filledDir.map((dir, i) =>
-      dir === 'row' || dir === 'row-reverse' ? 0 : filledSpace[i]
+      dir === 'column' ? filledSpace[i] : undefined
+    ),
+    marginLeft: filledDir.map((dir, i) =>
+      dir === 'row-reverse' ? filledSpace[i] : undefined
+    ),
+    marginTop: filledDir.map((dir, i) =>
+      dir === 'column-reverse' ? filledSpace[i] : undefined
     ),
   }
 
@@ -53,7 +59,7 @@ function renderChildren(
         {child}
       </Box>
     ) : (
-      <Box as={containerElement} {...margins} index={index}>
+      <Box as={containerElement} {...margins} key={index}>
         {child}
       </Box>
     )
