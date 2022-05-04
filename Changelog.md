@@ -2,6 +2,10 @@
 
 ## 3.0
 
+### 4.0.0
+
+- fixed peerDependencies, React 18 support
+
 ### 3.1.1
 
 - revert 3.1.0 due to regressions in behaviour
