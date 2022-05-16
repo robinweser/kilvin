@@ -16,6 +16,11 @@ export const responsiveStringProp = PropTypes.oneOfType([
   PropTypes.string,
 ])
 
+export const responsiveStringArrayProp = PropTypes.oneOfType([
+  PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  PropTypes.arrayOf(PropTypes.string),
+])
+
 export const ruleType = PropTypes.oneOfType([
   PropTypes.object,
   PropTypes.func,

@@ -8,6 +8,7 @@ import {
   ruleType,
   responsiveProp,
   responsiveStringProp,
+  responsiveStringArrayProp,
 } from '../utils/propTypes'
 
 const Grid = forwardRef(
@@ -21,6 +22,7 @@ const Grid = forwardRef(
       gap,
       columns,
       rows,
+      areas,
       ...props
     },
     ref
@@ -41,6 +43,7 @@ const Grid = forwardRef(
             gridGap: spacing(gap),
             gridTemplateColumns: columns,
             gridTemplateRows: rows,
+            gridTemplateAreas: areas,
           },
           extend
         )}>
@@ -80,4 +83,6 @@ Grid.propTypes = {
   columns: responsiveStringProp,
   /** Sets the gridTemplateRows property */
   rows: responsiveStringProp,
+  /** Sets the gridTemplateAreas property */
+  areas: responsiveStringArrayProp,
 }
