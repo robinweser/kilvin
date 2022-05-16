@@ -12,10 +12,17 @@ import { useFela } from 'react-fela';
 import applyMultiplier from '../utils/applyMultiplier';
 import makeResponsiveTransform from '../utils/makeResponsiveTransform';
 import { ruleType, responsiveProp, responsiveStringProp, responsiveStringArrayProp } from '../utils/propTypes';
-var transformAreas = makeResponsiveTransform(function (areas) {
-  return areas.map(function (area) {
-    return "\"".concat(area, "\"");
-  }).join(' ');
+var transformAreas = makeResponsiveTransform({
+  transform: function transform(areas) {
+    if (!(areas && areas.length)) {
+      return undefined;
+    }
+
+    return areas.map(function (area) {
+      return "\"".concat(area, "\"");
+    }).join(' ');
+  },
+  isArrayValue: true
 });
 var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var As = _ref.as,
@@ -44,7 +51,7 @@ var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gridGap: spacing(gap),
       gridTemplateColumns: columns,
       gridTemplateRows: rows,
-      gridTemplateAreas: areas && areas.length ? transformAreas(areas) : undefined
+      gridTemplateAreas: transformAreas(areas)
     }, extend)
   }), children);
 });

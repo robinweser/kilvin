@@ -12,8 +12,14 @@ import {
   responsiveStringArrayProp,
 } from '../utils/propTypes'
 
-const transformAreas = makeResponsiveTransform((areas) => {
-  return areas.map((area) => `"${area}"`).join(' ')
+const transformAreas = makeResponsiveTransform({
+  transform: (areas) => {
+    if (!(areas && areas.length)) {
+      return undefined
+    }
+    return areas.map((area) => `"${area}"`).join(' ')
+  },
+  isArrayValue: true,
 })
 
 const Grid = forwardRef(
@@ -48,8 +54,7 @@ const Grid = forwardRef(
             gridGap: spacing(gap),
             gridTemplateColumns: columns,
             gridTemplateRows: rows,
-            gridTemplateAreas:
-              areas && areas.length ? transformAreas(areas) : undefined,
+            gridTemplateAreas: transformAreas(areas),
           },
           extend
         )}>

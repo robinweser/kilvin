@@ -1,8 +1,8 @@
-import makeResponsiveTransform from './makeResponsiveTransform';
+import { makeResponsiveTransform } from './makeResponsiveTransform';
 
 function applyFactor(factor) {
   return function (value) {
-    if (value === undefined || value === null) {
+    if (value == null) {
       return undefined;
     }
 
@@ -16,5 +16,7 @@ function applyFactor(factor) {
 
 export default function applyMultiplier() {
   var factor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-  return makeResponsiveTransform(applyFactor(factor));
+  return makeResponsiveTransform({
+    transform: applyFactor(factor)
+  });
 }
