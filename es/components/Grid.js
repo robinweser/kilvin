@@ -11,18 +11,18 @@ import React, { forwardRef } from 'react';
 import { useFela } from 'react-fela';
 import applyMultiplier from '../utils/applyMultiplier';
 import makeResponsiveTransform from '../utils/makeResponsiveTransform';
-import { ruleType, responsiveProp, responsiveStringProp, responsiveStringArrayProp } from '../utils/propTypes';
+import { ruleType, responsiveProp, responsiveStringProp, responsiveStringMatrixProp } from '../utils/propTypes';
 var transformAreas = makeResponsiveTransform({
   transform: function transform(areas) {
     if (!(areas && areas.length)) {
       return undefined;
     }
 
-    return areas.map(function (area) {
-      return "\"".concat(area, "\"");
+    return areas.map(function (rowAreas) {
+      return "\"".concat(rowAreas.join(' '), "\"");
     }).join(' ');
   },
-  isArrayValue: true
+  isMatrixValue: true
 });
 var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var As = _ref.as,
@@ -87,5 +87,5 @@ Grid.propTypes = {
   rows: responsiveStringProp,
 
   /** Sets the gridTemplateAreas property */
-  areas: responsiveStringArrayProp
+  areas: responsiveStringMatrixProp
 };

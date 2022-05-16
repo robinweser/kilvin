@@ -9,7 +9,7 @@ import {
   ruleType,
   responsiveProp,
   responsiveStringProp,
-  responsiveStringArrayProp,
+  responsiveStringMatrixProp,
 } from '../utils/propTypes'
 
 const transformAreas = makeResponsiveTransform({
@@ -17,9 +17,13 @@ const transformAreas = makeResponsiveTransform({
     if (!(areas && areas.length)) {
       return undefined
     }
-    return areas.map((area) => `"${area}"`).join(' ')
+    return areas
+      .map((rowAreas) => {
+        return `"${rowAreas.join(' ')}"`
+      })
+      .join(' ')
   },
-  isArrayValue: true,
+  isMatrixValue: true,
 })
 
 const Grid = forwardRef(
@@ -95,5 +99,5 @@ Grid.propTypes = {
   /** Sets the gridTemplateRows property */
   rows: responsiveStringProp,
   /** Sets the gridTemplateAreas property */
-  areas: responsiveStringArrayProp,
+  areas: responsiveStringMatrixProp,
 }

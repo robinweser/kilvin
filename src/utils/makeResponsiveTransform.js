@@ -1,23 +1,28 @@
 export default function makeResponsiveTransform({
   transform,
-  isArrayValue = false,
+  isMatrixValue = false,
 }) {
-  return (responsiveValue) => {
-    if (Array.isArray(responsiveValue)) {
-      if (isArrayValue && !Array.isArray(responsiveValue[0])) {
-        return transform(responsiveValue)
+  return (value) => {
+    if (isMatrixValue) {
+      if (Array.isArray(value)) {
+        if (Array.isArray(value[0])) {
+          if (Array.isArray(value[0][0])) {
+            return value.map(transform)
+          }
+          return transform(value)
+        }
       }
-      return responsiveValue.map(transform)
-    }
-    if (isArrayValue) {
       return undefined
     }
-    if (responsiveValue && typeof responsiveValue === 'object') {
-      return Object.keys(responsiveValue).reduce((out, key) => {
-        out[key] = transform(responsiveValue[key])
+    if (Array.isArray(value)) {
+      return value.map(transform)
+    }
+    if (value && typeof value === 'object') {
+      return Object.keys(value).reduce((out, key) => {
+        out[key] = transform(value[key])
         return out
       }, {})
     }
-    return transform(responsiveValue)
+    return transform(value)
   }
 }

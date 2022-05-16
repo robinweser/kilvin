@@ -2,28 +2,34 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 export default function makeResponsiveTransform(_ref) {
   var transform = _ref.transform,
-      _ref$isArrayValue = _ref.isArrayValue,
-      isArrayValue = _ref$isArrayValue === void 0 ? false : _ref$isArrayValue;
-  return function (responsiveValue) {
-    if (Array.isArray(responsiveValue)) {
-      if (isArrayValue && !Array.isArray(responsiveValue[0])) {
-        return transform(responsiveValue);
+      _ref$isMatrixValue = _ref.isMatrixValue,
+      isMatrixValue = _ref$isMatrixValue === void 0 ? false : _ref$isMatrixValue;
+  return function (value) {
+    if (isMatrixValue) {
+      if (Array.isArray(value)) {
+        if (Array.isArray(value[0])) {
+          if (Array.isArray(value[0][0])) {
+            return value.map(transform);
+          }
+
+          return transform(value);
+        }
       }
 
-      return responsiveValue.map(transform);
-    }
-
-    if (isArrayValue) {
       return undefined;
     }
 
-    if (responsiveValue && _typeof(responsiveValue) === 'object') {
-      return Object.keys(responsiveValue).reduce(function (out, key) {
-        out[key] = transform(responsiveValue[key]);
+    if (Array.isArray(value)) {
+      return value.map(transform);
+    }
+
+    if (value && _typeof(value) === 'object') {
+      return Object.keys(value).reduce(function (out, key) {
+        out[key] = transform(value[key]);
         return out;
       }, {});
     }
 
-    return transform(responsiveValue);
+    return transform(value);
   };
 }
