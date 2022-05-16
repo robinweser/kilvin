@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react'
 import { useFela } from 'react-fela'
 
 import applyMultiplier from '../utils/applyMultiplier'
+import makeResponsiveTransform from '../utils/makeResponsiveTransform'
 
 import {
   ruleType,

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 import { useFela } from 'react-fela';
 import applyMultiplier from '../utils/applyMultiplier';
+import makeResponsiveTransform from '../utils/makeResponsiveTransform';
 import { ruleType, responsiveProp, responsiveStringProp, responsiveStringArrayProp } from '../utils/propTypes';
 var transformAreas = makeResponsiveTransform(function (areas) {
   return areas.map(function (area) {
