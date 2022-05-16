@@ -11,6 +11,11 @@ import React, { forwardRef } from 'react';
 import { useFela } from 'react-fela';
 import applyMultiplier from '../utils/applyMultiplier';
 import { ruleType, responsiveProp, responsiveStringProp, responsiveStringArrayProp } from '../utils/propTypes';
+var transformAreas = makeResponsiveTransform(function (areas) {
+  return areas.map(function (area) {
+    return "\"".concat(area, "\"");
+  }).join(' ');
+});
 var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var As = _ref.as,
       children = _ref.children,
@@ -38,7 +43,7 @@ var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gridGap: spacing(gap),
       gridTemplateColumns: columns,
       gridTemplateRows: rows,
-      gridTemplateAreas: areas
+      gridTemplateAreas: areas && areas.length ? transformAreas(areas) : undefined
     }, extend)
   }), children);
 });
