@@ -1,19 +1,5 @@
-export default function makeResponsiveTransform({
-  transform,
-  isMatrixValue = false,
-}) {
+export default function makeResponsiveTransform(transform) {
   return (value) => {
-    if (isMatrixValue) {
-      if (Array.isArray(value)) {
-        if (Array.isArray(value[0])) {
-          if (Array.isArray(value[0][0])) {
-            return value.map(transform)
-          }
-          return transform(value)
-        }
-      }
-      return undefined
-    }
     if (Array.isArray(value)) {
       return value.map(transform)
     }

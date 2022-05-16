@@ -10,20 +10,7 @@ import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 import { useFela } from 'react-fela';
 import applyMultiplier from '../utils/applyMultiplier';
-import makeResponsiveTransform from '../utils/makeResponsiveTransform';
-import { ruleType, responsiveProp, responsiveStringProp, responsiveStringMatrixProp } from '../utils/propTypes';
-var transformAreas = makeResponsiveTransform({
-  transform: function transform(areas) {
-    if (!(areas && areas.length)) {
-      return undefined;
-    }
-
-    return areas.map(function (rowAreas) {
-      return "\"".concat(rowAreas.join(' '), "\"");
-    }).join(' ');
-  },
-  isMatrixValue: true
-});
+import { ruleType, responsiveProp, responsiveStringProp } from '../utils/propTypes';
 var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var As = _ref.as,
       children = _ref.children,
@@ -51,7 +38,7 @@ var Grid = /*#__PURE__*/forwardRef(function (_ref, ref) {
       gridGap: spacing(gap),
       gridTemplateColumns: columns,
       gridTemplateRows: rows,
-      gridTemplateAreas: transformAreas(areas)
+      gridTemplateAreas: areas
     }, extend)
   }), children);
 });
@@ -87,5 +74,5 @@ Grid.propTypes = {
   rows: responsiveStringProp,
 
   /** Sets the gridTemplateAreas property */
-  areas: responsiveStringMatrixProp
+  areas: responsiveStringProp
 };

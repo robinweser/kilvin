@@ -3,28 +3,12 @@ import React, { forwardRef } from 'react'
 import { useFela } from 'react-fela'
 
 import applyMultiplier from '../utils/applyMultiplier'
-import makeResponsiveTransform from '../utils/makeResponsiveTransform'
 
 import {
   ruleType,
   responsiveProp,
   responsiveStringProp,
-  responsiveStringMatrixProp,
 } from '../utils/propTypes'
-
-const transformAreas = makeResponsiveTransform({
-  transform: (areas) => {
-    if (!(areas && areas.length)) {
-      return undefined
-    }
-    return areas
-      .map((rowAreas) => {
-        return `"${rowAreas.join(' ')}"`
-      })
-      .join(' ')
-  },
-  isMatrixValue: true,
-})
 
 const Grid = forwardRef(
   (
@@ -58,7 +42,7 @@ const Grid = forwardRef(
             gridGap: spacing(gap),
             gridTemplateColumns: columns,
             gridTemplateRows: rows,
-            gridTemplateAreas: transformAreas(areas),
+            gridTemplateAreas: areas,
           },
           extend
         )}>
@@ -99,5 +83,5 @@ Grid.propTypes = {
   /** Sets the gridTemplateRows property */
   rows: responsiveStringProp,
   /** Sets the gridTemplateAreas property */
-  areas: responsiveStringMatrixProp,
+  areas: responsiveStringProp,
 }
