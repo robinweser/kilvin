@@ -23,7 +23,5 @@ Thumbs.db
 *.js.map
 node_modules/
 npm-debug.log
-lib
-es
 coverage
 _book
