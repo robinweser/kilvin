@@ -1,10 +1,16 @@
 # Changelog
 
-## 3.0
+## 4.0
 
-### 4.0.0
+### 4.1.0
+
+- Support for the `grid-template-areas` CSS property
+
+### 4.0.0 - 4.0.1
 
 - fixed peerDependencies, React 18 support
+
+## 3.0
 
 ### 3.1.1
 
