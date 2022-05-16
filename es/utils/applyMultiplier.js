@@ -1,4 +1,4 @@
-import { makeResponsiveTransform } from './makeResponsiveTransform';
+import makeResponsiveTransform from './makeResponsiveTransform';
 
 function applyFactor(factor) {
   return function (value) {
