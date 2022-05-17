@@ -2,7 +2,7 @@ import makeResponsiveTransform from './makeResponsiveTransform'
 
 export default function applyMultiplier(factor = 1) {
   return makeResponsiveTransform((value) => {
-    if (value == null) {
+    if (value === undefined || value === null) {
       return undefined
     }
 
