@@ -13,6 +13,7 @@ Grid is an alternative to Box whenever we want to use [CSS Grid Layout](https://
 | gap       | _(length)_                                                                                      | CSS `grid-gap` property                       |
 | columns   | [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) | CSS `grid-template-columns` property          |
 | rows      | [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)       | CSS `grid-template-rows` property             |
+| areas     | [grid-template-areas](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)     | CSS `grid-template-areas` property            |
 
 ### Defaults
 
